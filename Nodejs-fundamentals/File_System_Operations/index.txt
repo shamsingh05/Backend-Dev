@@ -1,0 +1,85 @@
+Question-1. Difference between Synchronous and Asynchronous File Operations?
+
+Synchronous file operations are blocking operations in which the program waits until the file task is completed before executing the next statement. 
+In contrast, asynchronous file operations are non-blocking, meaning the program continues executing other tasks while the file operation is performed in the background.
+
+Synchronous operations block the execution flow.
+Asynchronous operations improve performance and responsiveness.
+Asynchronous methods are preferred in server-side applications.
+
+
+
+
+Question-2. Use of File Streams Instead of Reading the Entire File?
+
+File streams are used to process large files efficiently by reading or writing data in small chunks instead of loading the entire file into memory at once. This reduces memory consumption and improves performance.
+
+Suitable for large files.
+Memory-efficient.
+Enables continuous data processing.
+
+
+
+
+Question-3. Purpose of ‘utf8’ Encoding Parameter?
+
+The ‘utf8’ encoding parameter specifies that the file data should be interpreted as UTF-8 encoded text. Without specifying encoding, the file content is returned in binary format (Buffer). UTF-8 encoding ensures that the data is readable as a string.
+
+Converts binary data to readable text.
+Supports multiple languages and characters.
+Commonly used text encoding format.
+
+
+
+
+Question-4. Common Error Codes in File System Operations?
+
+Error codes are used to identify specific problems during file system operations. These codes help developers understand the cause of errors.
+
+Common Error Codes:
+ENOENT: File or directory does not exist.
+EACCES: Permission denied.
+EEXIST: File already exists.
+EMFILE: Too many open files.
+ENOTDIR: Expected a directory but found a file.
+EISDIR: Expected a file but found a directory.
+
+
+
+
+Question-5. Safe Deletion of a Directory with All Contents?
+
+To safely delete a directory with all its contents, a recursive deletion method is used. This method ensures that all files and subdirectories inside the directory are removed before deleting the directory itself. Safety measures such as validation of the directory path should be applied to avoid accidental deletion of important data.
+
+
+
+
+Question-6. Concept of Piping in Streams?
+
+Piping is a mechanism in which the output of one stream is directly connected to the input of another stream. It allows efficient data transfer between streams without storing the entire data in memory.
+
+Connects readable and writable streams.
+Improves performance.
+Reduces memory usage.
+
+
+
+
+Question-7. Importance of Error Handling in File Operations?
+
+Error handling in file operations is important to prevent application crashes, ensure program stability, and provide meaningful feedback when failures occur. It helps in detecting issues such as missing files, permission errors, and hardware failures.
+
+Improves reliability.
+Prevents unexpected program termination.
+Helps in debugging and security.
+
+
+
+
+Question-8. Difference between writeFile and appendFile Methods?
+
+The writeFile method is used to write data to a file by replacing existing content, while the appendFile method is used to add new data to the end of an existing file without removing the previous content.
+
+writeFile overwrites file content.
+appendFile preserves existing data and adds new content.
+Used in different scenarios like file creation and logging.
