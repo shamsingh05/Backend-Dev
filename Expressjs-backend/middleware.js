@@ -20,6 +20,24 @@ app.listen(PORT, () => {
 //   // return res.send("you are not allowed");
 //   next();
 // })
+const authMiddleware = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+
+  if (!authHeader) {
+    return res.status(401).json({ message: "Authorization token missing" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  const VALID_TOKEN = "mysecrettoken123";
+
+  if (token !== VALID_TOKEN) {
+    return res.status(403).json({ message: "Invalid or unauthorized token" });
+  }
+
+  next();
+};
+
 
 const loggerFile = async (req, res, next) => {
   const log = `Request at: ${new Date().toLocaleString()} | Method: ${req.method}\n`;
@@ -113,7 +131,7 @@ app.delete("/students/:id", async (req, res) => {
   }
 });
 
-app.post("/students", async (req, res) => {
+app.post("/students",authMiddleware, async (req, res) => {
   try {
     const { name, branch } = req.body;
 
