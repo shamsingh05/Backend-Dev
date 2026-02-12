@@ -28,5 +28,13 @@
     "id": "6",
     "name": "Rahul",
     "branch": "IT"
+  },
+  {
+    "name": "Shambhavi Singh",
+    "branch": "CSE"
+  },
+  {
+    "name": "Ela",
+    "branch": "Civil"
   }
 ]
